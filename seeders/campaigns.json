@@ -1,0 +1,22 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "product_id": 201807242228,
+      "picture": "/assets/keyvisuals/201807242228.jpg",
+      "story": "於是 我也想要給你 一個那麼美好的自己。 不朽《與自己和好如初》"
+    },
+    {
+      "id": 2,
+      "product_id": 201807242222,
+      "picture": "/assets/keyvisuals/201807242222.jpg",
+      "story": "永遠 展現自信與專業 無法抵擋的男人魅力。 復古《再一次經典》"
+    },
+    {
+      "id": 3,
+      "product_id": 201807202140,
+      "picture": "/assets/keyvisuals/201807202140.jpg",
+      "story": "瞬間 在城市的角落 找到失落多時的記憶。 印象《都會故事集》"
+    }
+  ]
+}

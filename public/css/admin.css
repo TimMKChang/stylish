@@ -1,0 +1,46 @@
+.admin-product-main, .campaign-product-main {
+  width: 100%;
+  max-width: 500px;
+  margin: 20px auto;
+  font-size: 1.2rem;
+}
+
+.admin-product-main h3, .campaign-product-main h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.admin-product-main .input-container, .campaign-product-main .input-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 10px 0;
+}
+
+.admin-product-main .btn-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.admin-product-main form label, .campaign-product-main form label {
+  width: 25%;
+}
+
+.admin-product-main form input, .admin-product-main form select,
+.campaign-product-main form input, .campaign-product-main form select {
+  width: 70%;
+}
+
+.admin-product-main form textarea, .campaign-product-main form textarea {
+  width: 100%;
+}
+
+.admin-product-main img, .campaign-product-main img {
+  max-width: 400px;
+  max-height: 400px;
+  display: block;
+  margin: 0 auto;
+}
+
+

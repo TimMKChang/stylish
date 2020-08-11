@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stylish 2020 Summer</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <link rel="stylesheet" type="text/css" href="/css/admin.css">
+</head>
+
+<body>
+
+  <div id="header"></div>
+
+
+  <div class="admin-product-main">
+
+    <h3>Create a New Product</h3>
+    <form action="/admin/product" method="post" enctype="multipart/form-data">
+
+      <div class="input-container">
+        <label for=" id">ID</label>
+        <input type="number" id="id" name="id">
+      </div>
+
+      <div class="input-container">
+        <label for="category">Category</label>
+        <select id="category" name="category">
+          <option value="women">Women</option>
+          <option value="men">Men</option>
+          <option value="accessories">Accessories</option>
+        </select>
+      </div>
+
+      <div class="input-container">
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title">
+      </div>
+
+      <div class="input-container">
+        <label for="description">Description</label>
+        <textarea rows="4" cols="50" id="description" name="description"></textarea>
+      </div>
+
+      <div class="input-container">
+        <label for="price">Price</label>
+        <input type="number" id="price" name="price">
+      </div>
+
+      <div class="input-container">
+        <label for="texture">Texture</label>
+        <input type="text" id="texture" name="texture">
+      </div>
+
+      <div class="input-container">
+        <label for="wash">Wash</label>
+        <input type="text" id="wash" name="wash">
+      </div>
+
+      <div class="input-container">
+        <label for="place">Place of Production</label>
+        <input type="text" id="place" name="place">
+      </div>
+
+      <div class="input-container">
+        <label for="note">Note</label>
+        <input type="text" id="note" name="note">
+      </div>
+
+      <div style="background-color: rgba(0, 0, 0, 0.1);">點選顏色以增加或移除</div>
+
+      <div class="btn-container">
+        <button type="button" class="btn btn-light" data-code="FFFFFF">白色</button>
+        <button type="button" class="btn btn-light" data-code="DDFFBB">亮綠</button>
+        <button type="button" class="btn btn-dark" data-code="CCCCCC">淺灰</button>
+        <button type="button" class="btn btn-dark" data-code="BB7744">淺棕</button>
+        <button type="button" class="btn btn-dark" data-code="DDF0FF">淺藍</button>
+        <button type="button" class="btn btn-dark" data-code="334455">深藍</button>
+        <button type="button" class="btn btn-dark" data-code="FFDDDD">粉紅</button>
+      </div>
+
+      <div class="input-container">
+        <label for="colorCodes">Colors</label>
+        <textarea rows="2" id="colorCodes" name="colorCodes" disabled>FFFFFF,DDFFBB</textarea>
+      </div>
+
+      <div class="input-container">
+        <label for="colorNames">Color Names</label>
+        <input type="text" id="colorNames" name="colorNames" value="白色,亮綠" disabled>
+      </div>
+
+      <div style="background-color: rgba(0, 0, 0, 0.1);">size：用,分隔</div>
+
+      <div class="input-container">
+        <label for="sizes">Sizes</label>
+        <input type="text" id="sizes" name="sizes" value="S,M,L,XL">
+      </div>
+
+      <div style="background-color: rgba(0, 0, 0, 0.1);">stock：每一組[]對應一個顏色，裡面的分別為各size的數量，[]之間用;分隔，數量為0也需要填</div>
+      <div class="input-container">
+        <label for="stocks">Stocks</label>
+        <input type="text" id="stocks" name="stocks" value="[1,0,3,4];[5,6,0,8]">
+      </div>
+
+      <div class="input-container">
+        <label for="story">Story</label>
+        <textarea rows="4" id="story" name="story"></textarea>
+      </div>
+
+      <div class="input-container">
+        <label for="main_image">Main Image</label>
+        <input type="file" name="main_image" />
+      </div>
+
+
+      <div style="background-color: rgba(0, 0, 0, 0.1);">(The maximum number of other images is 3)</div>
+      <div class="input-container">
+        <label for="other_images">Other Images</label>
+        <input type="file" name="other_images" multiple />
+      </div>
+
+      <button type="button" class="create-btn btn btn-dark btn-block">Create</button>
+
+      <h3 class="res-msg my-2" style="background-color: rgba(0, 0, 0, 0.1);"></h3>
+
+      <!-- image preview -->
+      <h3>Main Image Preview</h3>
+      <img src="" alt="" class="main_image">
+
+      <h3>Other Images Preview</h3>
+      <img src="" alt="" class="other_images">
+      <img src="" alt="" class="other_images">
+      <img src="" alt="" class="other_images">
+
+    </form>
+
+  </div>
+
+
+  <div id="footer"></div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+
+  <script src="/js/main.js"></script>
+  <script src="/admin/product.js"></script>
+
+</body>
+
+</html>

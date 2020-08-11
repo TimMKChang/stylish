@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stylish 2020 Summer</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    const socket = io();
+  </script>
+</head>
+
+<body>
+
+  <div id="header"></div>
+
+  <div class="cart-main">
+    <div class="view">
+
+      <div class="cart">
+        <div class="row title">
+          <div class="variant">&nbsp;</div>
+          <div class="qty">數量</div>
+          <div class="price">單價</div>
+          <div class="subtotal">小計</div>
+          <div class="remove"></div>
+        </div>
+        <div class="list">
+
+        </div>
+      </div>
+
+      <div class="target">
+        <div class="country">
+          <span class="text">配送國家</span>
+          <select>
+            <option>台灣或離島</option>
+          </select>
+        </div>
+        <div class="country">
+          <span class="text">付款方式</span>
+          <select>
+            <option>信用卡付款</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="reminder">
+        <div>※ 提醒您：</div>
+        <div>● 請填寫正確收件人資訊，避免包裹配送不達</div>
+        <div>● 請填寫正確收件人姓名 ( 與證件相符 )，避免無法領取</div>
+      </div>
+
+      <div class="recipient">
+        <div class="title">收件資料</div>
+
+        <div class="line">
+          <div class="text">收件人姓名</div>
+          <div class="input">
+            <input type="text" id="recipient-name">
+          </div>
+        </div>
+
+        <div class="line">
+          <div class="text">Email</div>
+          <div class="input">
+            <input type="text" id="recipient-email">
+          </div>
+        </div>
+
+        <div class="line">
+          <div class="text">手機號碼</div>
+          <div class="input">
+            <input type="text" id="recipient-phone">
+          </div>
+        </div>
+
+        <div class="line">
+          <div class="text">收件地址</div>
+          <div class="input">
+            <input type="text" id="recipient-address">
+          </div>
+        </div>
+
+        <div class="line">
+          <div class="text">配送時間</div>
+          <div class="input">
+            <label>
+              <input type="radio" value="morning" name="recipient-time">
+              <span class="time">08:00 - 12:00</span>
+            </label>
+
+            <label>
+              <input type="radio" value="afternoon" name="recipient-time">
+              <span class="time">14:00 - 18:00</span>
+            </label>
+
+            <label>
+              <input type="radio" value="anytime" name="recipient-time" checked>
+              <span class="time">不指定</span>
+            </label>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="payment">
+        <div class="title">付款資料</div>
+        <div class="line">
+          <div class="text">信用卡號碼</div>
+          <div class="input">
+            <div class="tpfield" id="card-number"></div>
+          </div>
+        </div>
+
+        <div class="line">
+          <div class="text">有效期限</div>
+          <div class="input">
+            <div class="tpfield" id="card-expiration-date"></div>
+          </div>
+        </div>
+
+        <div class="line">
+          <div class="text">安全碼</div>
+          <div class="input">
+            <div class="tpfield" id="card-ccv"></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="confirm">
+        <div class="row">
+          <div class="title">總金額</div>
+          <div class="price">
+            <span class="unit">NT. </span>
+            <span class="subtotal">1198</span>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="title">運費</div>
+          <div class="price">
+            <span class="unit">NT. </span>
+            <span class="freight">60</span>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="separator"></div>
+        </div>
+
+        <div class="row">
+          <div class="title">應付金額</div>
+          <div class="price">
+            <span class="unit">NT. </span>
+            <span class="total">1258</span>
+          </div>
+        </div>
+
+        <div class="row">
+          <button class="checkout">確認付款</button>
+        </div>
+
+        <div class="after-checkout-container">
+          <!-- <div class="after-checkout"></div>
+          <div class="spinner-container">
+            <div class="spinner-border text-dark" role="status" style="width: 5rem; height: 5rem; border-width: 10px;">
+              <span class="sr-only">Loading...</span>
+            </div>
+            <div class="title">交易處理中請稍候</div>
+          </div> -->
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <div id="footer"></div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+
+  <script src="/js/main.js"></script>
+  <script src="/js/cart.js"></script>
+
+  <script src="https://js.tappaysdk.com/tpdirect/v5.2.0"></script>
+  <script src="/js/checkout.js"></script>
+
+</body>
+
+</html>

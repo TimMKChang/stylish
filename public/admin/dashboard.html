@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stylish 2020 Summer</title>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <style>
+    .dashboard-container {
+      display: flex;
+      flex-wrap: wrap;
+      width: 95vw;
+      height: 95vh;
+      margin: 0 auto;
+    }
+
+    .info-block {
+      width: 50%;
+      height: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .total-revenue .number {
+      width: 50%;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 4rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="dashboard-container">
+
+    <div class="total-revenue info-block">
+      <div class="number"></div>
+    </div>
+
+    <div class="color-percentage info-block">
+      <div class="pie-chart"></div>
+    </div>
+
+    <div class="qty-price info-block">
+      <div class="histogram"></div>
+    </div>
+
+    <div class="qty-top5 info-block">
+      <div class="stacked-bar-chart"></div>
+    </div>
+
+  </div>
+
+  <script src="/admin/dashboard.js"></script>
+
+</body>
+
+</html>

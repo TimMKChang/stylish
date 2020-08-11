@@ -1,0 +1,54 @@
+<header>
+
+  <div class="top">
+    <div class="logo">
+      <a href="/">
+        <img src="/images/logo.png" alt="logo">
+      </a>
+    </div>
+    <nav>
+      <div class="item">
+        <a href="/?tag=women" data-tag="women">女裝</a>
+      </div>
+      <div class="item left">
+        <a href="/?tag=men" data-tag="men">男裝</a>
+      </div>
+      <div class="item left">
+        <a href="/?tag=accessories" data-tag="accessories">配件</a>
+      </div>
+    </nav>
+    <form action="" class="search-bar">
+      <input type="text" name="tag">
+      <img src="/images/search.png" alt="">
+    </form action="">
+    <div class="cart">
+      <a href="/cart.html">
+        <div class="cart-qty">0</div>
+      </a>
+    </div>
+    <div class="member">
+      <a href="/profile.html"></a>
+    </div>
+  </div>
+
+  <div class="bottom"></div>
+
+</header>
+
+<script>
+
+  load_nav_href();
+
+  function load_nav_href() {
+    let port = '';
+    if (location.hostname === 'localhost') {
+      port = `:${location.port}`;
+    }
+
+    const tags = document.querySelectorAll('header nav a');
+    for (let tag of tags) {
+      tag.setAttribute('href', `${location.protocol}//${location.hostname}${port}/?tag=${tag.dataset.tag}`);
+    }
+  }
+
+</script>

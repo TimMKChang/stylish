@@ -1,0 +1,46 @@
+<div class="container py-5">
+  <div class="row">
+
+    {{#each data}}
+
+    <div class="col-6">
+      <img src="{{this.main_image}}" alt="main" style="width: 60%;">
+      <h3>{{this.id}}</h3>
+      <h3>{{this.title}}</h3>
+      <p>{{this.description}}</p>
+      <h3>{{this.price}}</h3>
+      <h3>{{this.texture}}</h3>
+      <h3>{{this.wash}}</h3>
+      <h3>{{this.place}}</h3>
+      <h3>{{this.note}}</h3>
+      <h3>{{this.story}}</h3>
+
+      {{#each this.sizes}}
+      <span>{{this}}</span>
+      {{/each}}
+
+      <br>
+
+      {{#each this.colors}}
+      <span>{{this.code}},</span><span>{{this.name}}</span>
+      {{/each}}
+
+      <br>
+
+      {{#each this.variants}}
+      <span>{{this.color_code}},</span><span>{{this.size}},</span><span>stock:{{this.stock}}</span><br>
+      {{/each}}
+
+    </div>
+
+    <div class=" col-6">
+      {{#each this.images}}
+      <img src="{{this}}" alt="other" style="width: 60%;">
+      {{/each}}
+    </div>
+
+    <div style="width: 100%; height: 1px; background-color: black; margin: 5px 0;"></div>
+    {{/each}}
+
+  </div>
+</div>
