@@ -1,144 +1,113 @@
-### Host Name
+# [STYLiSH](https://haboy.xyz/) 
 
-[haboy.xyz](https://haboy.xyz/)
+An e-commerce shopping website for fashionable clothing.
 
-### Demo Website
+#### Website URL: [haboy.xyz](https://haboy.xyz/)
 
-- Homepage
+<img src="https://d6vm19jycfxsv.cloudfront.net/readme/intro_1.png">
 
-https://haboy.xyz/
+<img src="https://d6vm19jycfxsv.cloudfront.net/readme/intro_2.png">
 
-- Product
 
-https://haboy.xyz/product.html?id=201807202157
+## Table of Contents
 
-- Cart
+- [Technologies](#Technologies)
+- [Architecture](#Architecture)
+- [Database Schema](#Database-Schema)
+- [Features](#Features)
+- [Test Account](#Test-Account)
+- [Contact](#Contact)
 
-https://haboy.xyz/cart.html
+## Technologies
 
-- Thankyou
+### Backend
 
-https://haboy.xyz/thankyou.html?id=77777777
+- Linux
+- Node.js / Express.js
+- RESTful API
+- NGINX
 
-- Profile
+### Front-end
 
-https://haboy.xyz/profile.html
+- HTML
+- CSS
+- JavaScript
+- Bootstrap
+- AJAX
 
-- Login
+### Cloud Service (AWS)
 
-https://haboy.xyz/user/login.html
+- Elastic Compute Cloud (EC2)
+- Simple Storage Service (S3)
+- Relational Database Service (RDS)
+- CloudFront
+- Elastic Load Balancing (ELB)
 
-- Register
+### Database
 
-https://haboy.xyz/user/register.html
+- MySQL
+- Redis
 
-### Admin
+### Third Party API
 
-- Product
+- Facebook Login
+- TapPay SDK
 
-https://haboy.xyz/admin/product.html
+### Networking
 
-- Campaign
+- HTTP & HTTPS
+- Domain Name System
 
-https://haboy.xyz/admin/campaign.html
+### Test
 
-- Delete product or campaign
+- Artillery
 
-https://haboy.xyz/admin/delete.html
+### Others
 
-### API
-- Product List API
+- Design Pattern: MVC
+- Version Control: Git, GitHub
 
-https://haboy.xyz/api/1.0/products/all
 
-https://haboy.xyz/api/1.0/products/men
+## Architecture
 
-https://haboy.xyz/api/1.0/products/women
+![Architecture](https://d6vm19jycfxsv.cloudfront.net/readme/architecture.png)
 
-https://haboy.xyz/api/1.0/products/accessories
+## Database Schema
 
-https://haboy.xyz/api/1.0/products/women?paging=1
+![Database Design](https://d6vm19jycfxsv.cloudfront.net/readme/ERD.png)
 
-- Product Search API
+## Features
 
-https://haboy.xyz/api/1.0/products/search?keyword=洋裝
+- Display all products or by category
+- Display details of product
+- Add product to cart with color, size, and quantity
+- Modify quantity of items in cart
+- Check out with credit card
 
-- Product Details API
 
-https://haboy.xyz/api/1.0/products/details?id=202005171001
+<br><br>
+<img src="https://d6vm19jycfxsv.cloudfront.net/readme/home.png">
+<br><br>
+<img src="https://d6vm19jycfxsv.cloudfront.net/readme/product.png">
+<br><br>
+<img src="https://d6vm19jycfxsv.cloudfront.net/readme/cart.png">
 
-- Marketing Campaigns API
 
-https://haboy.xyz/api/1.0/marketing/campaigns
 
-- User Sign Up API
+## Test Account
 
-https://haboy.xyz/user/register.html
+- Customer
+  - email: customer<span>@mail.com</span>
+  - password: aaaa1234
+- Credit Card
+  - Card Number: 4242 4242 4242 4242
+  - Expiration Date: 01/23
+  - CVV Code: 123
 
-POST https://haboy.xyz/user/signup
 
-- User Sign In API
 
-https://haboy.xyz/user/login.html
+## Contact
 
-POST https://haboy.xyz/user/signin
+<a href="https://github.com/TimMKChang" target="_blank">Tim Chang</a>
 
-- User Profile API
-
-https://haboy.xyz/user/profile.html
-
-GET https://haboy.xyz/user/profile
-
-- Order Check Out API
-
-https://haboy.xyz/admin/checkout.html
-
-POST https://haboy.xyz/order/checkout
-
-
-### Image 
-https://<span></span>haboy.xyz/assets/:product_id/main.jpg
-
-https://haboy.xyz/assets/201807201824/main.jpg
-
-https://<span></span>haboy.xyz/assets/:product_id/[other image No.].jpg
-
-https://haboy.xyz/assets/201807201824/1.jpg
-
-https://<span></span>haboy.xyz/campaigns/[campaign id].jpg
-
-https://haboy.xyz/campaigns/1.jpg
-
-
-### Run Web Server in the Background
-#### activate
-nohup node app.js > output.log &
-#### shutdown
-kill &lt;pid&gt;
-
-
-### Midterm Dashboard
-
-https://www.haboy.xyz/admin/dashboard.html
-
-1. Get and Store Order Data
-2. Build the Dashboard
-3. Auto-Refresh your Dashboard
-4. Performance Tuning and Analysis (Advanced Optional)
-
-- How much time your server spend to aggregate the data and render the page? (This one should be at least better than my sample page)
-
-大約0.6 seconds
-在function的前後分別計算時間，再輸出差值。
-
-- How much additional memory your server (or browser) use to aggregate the data?
-
-大約6 MB
-藉由process.memoryUsage()在function的前後分別計算，再輸出差值。
-
-- How much data you transfer through the network? (Be careful about browser cache, you should measure it without browser cache)
-
-查看API Network Response Headers Content-Length
-1100514，每一單位為8 bytes (B)
-大約1.1 MB
-或者下載下來，為1.04 MB
+Email: b00501007@gmail.com
